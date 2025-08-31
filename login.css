@@ -329,18 +329,21 @@ body {
 }
 
 h1 {
-    color: rgba(40, 40, 40, 0.95);
-    font-size: 32px;
-    font-weight: 600;
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 8px;
     text-align: center;
     position: relative;
     z-index: 2;
+    text-shadow: 0 2px 8px var(--muted);
 }
 
 .subtitle {
-    color: rgba(60, 60, 60, 0.7);
-    font-size: 16px;
+    color: var(--muted-foreground);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
     margin-bottom: 40px;
     text-align: center;
     position: relative;
@@ -354,8 +357,9 @@ h1 {
 }
 
 label {
-    color: rgba(50, 50, 50, 0.8);
-    font-size: 14px;
+    color: var(--primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
     margin-bottom: 8px;
     display: block;
     font-weight: 500;
