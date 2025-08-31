@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComGen</title>
+    <meta name="description" content="Premium fashion and appliances retailer offering sophisticated styles and modern convenience">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel=" stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" style="display: flex; align-items: center; justify-content: center; height: 4rem;">
+                <img src="logo-png.png" alt="ComGen Logo" style="height: 3.5rem; width: 10.5rem; display: block; margin: 0 auto;">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+                <li><a href="#shoes">Shoes</a></li>
+                <li><a href="#appliances">Appliances</a></li>
+            </ul>
+
+            <div class="search-container">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" placeholder="Search products..." class="search-input">
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-ghost">
+                    <i data-lucide="user"></i>
+                    Login
+                </button>
+                <button class="btn btn-primary">Sign Up</button>
+                <button class="btn btn-ghost" style="position: relative;">
+                    <i data-lucide="shopping-bag"></i>
+                    <span style="position: absolute; top: -0.25rem; right: -0.25rem; background: var(--accent); color: var(--foreground); font-size: 0.75rem; border-radius: 50%; width: 1rem; height: 1rem; display: flex; align-items: center; justify-content: center;">0</span>
+                </button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" placeholder="Search products..." class="search-input">
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#men" onclick="toggleMobileMenu()">Men</a></li>
+                    <li><a href="#women" onclick="toggleMobileMenu()">Women</a></li>
+                    <li><a href="#shoes" onclick="toggleMobileMenu()">Shoes</a></li>
+                    <li><a href="#appliances" onclick="toggleMobileMenu()">Appliances</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn btn-ghost">
+                        <i data-lucide="user"></i>
+                        Login
+                    </button>
+                    <button class="btn btn-primary">Sign Up</button>
+                    <button class="btn btn-ghost">
+                        <i data-lucide="shopping-bag"></i>
+                        Cart (0)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-grid">
+                <!-- Men's Section -->
+                <div class="hero-panel">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Men's Premium Fashion Collection">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h2>Men's Collection</h2>
+                        <p>Discover sophisticated styles and timeless elegance</p>
+                        <button class="btn btn-accent">Shop Men's</button>
+                    </div>
+                </div>
+
+                <!-- Women's Section -->
+                <div class="hero-panel">
+                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Women's Premium Fashion Collection">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h2>Women's Collection</h2>
+                        <p>Embrace luxury and contemporary fashion</p>
+                        <button class="btn btn-accent">Shop Women's</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central Tagline -->
+            <div class="hero-tagline">
+                <h1>Style Redefined</h1>
+                <p>Where premium fashion meets modern convenience. Discover curated collections and exclusive appliances for the sophisticated lifestyle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Men's Collection -->
+    <section id="men" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Men's Collection</h2>
+                    <p class="section-subtitle">Curated selections for the discerning individual</p>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="scrollCarousel('men', -1)">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn" onclick="scrollCarousel('men', 1)">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="men-products">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?q=80&w=669&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Premium Cotton Shirt">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                            <button class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Denim Shirt</h3>
+                        <div class="product-price">
+                            <span class="price-current">$129</span>
+                            <span class="price-original">$179</span>
+                        </div>
+                        <p class="product-category">Shirts</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1715090364409-161e8dd5ab8e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Designer Blazer">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                            <button class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Designer Coat</h3>
+                        <div class="product-price">
+                            <span class="price-current">$399</span>
+                        </div>
+                        <p class="product-category">Outerwear</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://dtcralphlauren.scene7.com/is/image/PoloGSI/s7-1352639_alternate10?$rl_4x5_pdp$" alt="Luxury Polo">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                            <button class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Luxury Polo</h3>
+                        <div class="product-price">
+                            <span class="price-current">$89</span>
+                            <span class="price-original">$119</span>
+                        </div>
+                        <p class="product-category">Polo Shirts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Women's Collection -->
+    <section id="women" class="section bg-secondary">
+        <div class="section-container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Women's Collection</h2>
+                    <p class="section-subtitle">Curated selections for the discerning individual</p>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="scrollCarousel('women', -1)">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn" onclick="scrollCarousel('women', 1)">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="women-products">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Elegant Evening Dress">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                            <button class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Elegant Baby Pink Blazer</h3>
+                        <div class="product-price">
+                            <span class="price-current">$299</span>
+                            <span class="price-original">$399</span>
+                        </div>
+                        <p class="product-category">Formals</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://img.clevup.in/352617/women-latest-new-dress-trending-1707799811540_SKU-3920_0.jpg?width=600&format=webp" alt="Designer Handbag">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                            <button class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Designer Dress</h3>
+                        <div class="product-price">
+                            <span class="price-current">$599</span>
+                        </div>
+                        <p class="product-category">Dresses</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://img.faballey.com/images/Product/XKS04397Z/d3.jpg" alt="Silk Suit">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                            <button class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+                                <i data-lucide="heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Silk Suit</h3>
+                        <div class="product-price">
+                            <span class="price-current">$149</span>
+                            <span class="price-original">$199</span>
+                        </div>
+                        <p class="product-category">Suit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shoes Section -->
+    <section id="shoes" class="shoes-section">
+        <div class="section-container">
+            <div class="shoes-hero">
+                <h2 class="section-title">Step into Style</h2>
+                <p style="font-size: 1.25rem; color: var(--muted-foreground); max-width: 32rem; margin: 0 auto;">
+                    From athletic performance to sophisticated elegance, discover footwear that elevates every step
+                </p>
+                <br>
+                <div class="shoes-slideshow-wrapper" style="width: 80vw; max-width: 1200px; margin: 0 auto;">
+                    <div class="shoes-slideshow" id="shoes-slideshow" style="width: 100%; aspect-ratio: 16/6; position: relative; overflow: hidden; border-radius: 1.5rem;">
+                        <img src="https://ca-times.brightspotcdn.com/dims4/default/8fe0b21/2147483647/strip/true/crop/6122x4081+0+1/resize/1440x960!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F0b%2F7b%2F5b56302840069c22cf1fa46957be%2F1351750-fi-sneaker-buyer-coolkicks-jlc-16172-009.jpg" class="slide-img" style="width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; opacity: 1; transition: opacity 1s;" alt="Sneaker Slide 1">
+                        <img src="https://obtaind.com/cdn/shop/products/LV2_2d8a0733-f0bf-46c0-98f4-4ca47711ebd3.jpg?v=1671137725&width=1946" class="slide-img" style="width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; opacity: 0; transition: opacity 1s;" alt="Sneaker Slide 2">
+                        <img src="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="slide-img" style="width: 100%; height: 100%; object-fit: cover; position: absolute; left: 0; top: 0; opacity: 0; transition: opacity 1s;" alt="Sneaker Slide 3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, var(--cream), var(--warm-gray)); padding: 2rem;">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=320&fit=crop" alt="Athletic Sneakers" style="object-fit: contain; transition: transform 0.5s ease;">
+                        
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.25rem; margin-right: 0.5rem;">
+                                <i data-lucide="star" style="width: 1rem; height: 1rem; color: var(--rose-gold); fill: var(--rose-gold);"></i>
+                                <span style="font-size: 0.875rem; font-weight: 500;">4.8</span>
+                            </div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">(127)</span>
+                        </div>
+                        
+                        <h3 class="product-name">Premium Athletic Sneaker</h3>
+                        
+                        <div class="product-price">
+                            <span class="price-current">$189</span>
+                            <span class="price-original">$249</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, var(--cream), var(--warm-gray)); padding: 2rem;">
+                        <img src="https://images.unsplash.com/photo-1527090526205-beaac8dc3c62?w=400&h=320&fit=crop" alt="Classic Leather Loafer" style="object-fit: contain; transition: transform 0.5s ease;">
+                        
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.25rem; margin-right: 0.5rem;">
+                                <i data-lucide="star" style="width: 1rem; height: 1rem; color: var(--rose-gold); fill: var(--rose-gold);"></i>
+                                <span style="font-size: 0.875rem; font-weight: 500;">4.9</span>
+                            </div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">(89)</span>
+                        </div>
+                        
+                        <h3 class="product-name">Classic Leather Loafer</h3>
+                        
+                        <div class="product-price">
+                            <span class="price-current">$299</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image" style="background: linear-gradient(135deg, var(--cream), var(--warm-gray)); padding: 2rem;">
+                        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&h=320&fit=crop" alt="Designer High-Top" style="object-fit: contain; transition: transform 0.5s ease;">
+                        
+                        <div class="product-overlay">
+                            <button class="btn btn-primary">
+                                <i data-lucide="shopping-cart"></i>
+                                Quick Shop
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.25rem; margin-right: 0.5rem;">
+                                <i data-lucide="star" style="width: 1rem; height: 1rem; color: var(--rose-gold); fill: var(--rose-gold);"></i>
+                                <span style="font-size: 0.875rem; font-weight: 500;">4.7</span>
+                            </div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">(156)</span>
+                        </div>
+                        
+                        <h3 class="product-name">Designer High-Top</h3>
+                        
+                        <div class="product-price">
+                            <span class="price-current">$349</span>
+                            <span class="price-original">$399</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <button class="btn btn-accent px-8 py-3 text-lg">View All Footwear</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appliances Section -->
+    <section id="appliances" class="section">
+        <div class="section-container">
+            <!-- Hero Banner -->
+            <div class="appliances-banner">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=400&fit=crop" alt="Premium Kitchen Appliances">
+                <div class="appliances-overlay">
+                    <div class="appliances-content">
+                        <h2>Premium Appliances</h2>
+                        <p>Transform your kitchen with intelligent design and cutting-edge technology</p>
+                        <button class="btn btn-accent px-8 py-3 text-lg">Explore Collection</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="appliances-grid">
+                <div class="appliance-card">
+                    <div class="appliance-icon">
+                        <i data-lucide="coffee" style="width: 2rem; height: 2rem; color: var(--foreground);"></i>
+                    </div>
+                    <h3 class="appliance-title">Coffee Makers</h3>
+                    <p class="appliance-description">Premium brewing systems for the perfect cup</p>
+                    <ul class="appliance-features">
+                        <li>Automated brewing</li>
+                        <li>Temperature control</li>
+                        <li>Premium materials</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">View Products</button>
+                </div>
+
+                <div class="appliance-card">
+                    <div class="appliance-icon">
+                        <i data-lucide="blend" style="width: 2rem; height: 2rem; color: var(--foreground);"></i>
+                    </div>
+                    <h3 class="appliance-title">Blenders & Mixers</h3>
+                    <p class="appliance-description">High-performance tools for culinary creativity</p>
+                    <ul class="appliance-features">
+                        <li>Variable speeds</li>
+                        <li>Durable blades</li>
+                        <li>Easy cleaning</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">View Products</button>
+                </div>
+
+                <div class="appliance-card">
+                    <div class="appliance-icon">
+                        <i data-lucide="microwave" style="width: 2rem; height: 2rem; color: var(--foreground);"></i>
+                    </div>
+                    <h3 class="appliance-title">Smart Microwaves</h3>
+                    <p class="appliance-description">Intelligent cooking with modern convenience</p>
+                    <ul class="appliance-features">
+                        <li>Smart controls</li>
+                        <li>Even heating</li>
+                        <li>Multiple presets</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">View Products</button>
+                </div>
+
+                <div class="appliance-card">
+                    <div class="appliance-icon">
+                        <i data-lucide="snowflake" style="width: 2rem; height: 2rem; color: var(--foreground);"></i>
+                    </div>
+                    <h3 class="appliance-title">Refrigeration</h3>
+                    <p class="appliance-description">Advanced cooling solutions for fresh living</p>
+                    <ul class="appliance-features">
+                        <li>Energy efficient</li>
+                        <li>Smart technology</li>
+                        <li>Spacious design</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">View Products</button>
+                </div>
+
+                <div class="appliance-card">
+                    <div class="appliance-icon">
+                        <i data-lucide="utensils" style="width: 2rem; height: 2rem; color: var(--foreground);"></i>
+                    </div>
+                    <h3 class="appliance-title">Kitchen Tools</h3>
+                    <p class="appliance-description">Professional-grade utensils and accessories</p>
+                    <ul class="appliance-features">
+                        <li>Ergonomic design</li>
+                        <li>Durable materials</li>
+                        <li>Chef approved</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">View Products</button>
+                </div>
+
+                <div class="appliance-card">
+                    <div class="appliance-icon">
+                        <i data-lucide="chef-hat" style="width: 2rem; height: 2rem; color: var(--foreground);"></i>
+                    </div>
+                    <h3 class="appliance-title">Cooking Equipment</h3>
+                    <p class="appliance-description">Complete solutions for gourmet cooking</p>
+                    <ul class="appliance-features">
+                        <li>Precision control</li>
+                        <li>Even heating</li>
+                        <li>Professional quality</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width: 100%;">View Products</button>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div style="margin-top: 4rem; text-align: center; background: linear-gradient(to right, var(--cream), var(--blush)); border-radius: 1rem; padding: 3rem; opacity: 0; transform: translateY(2rem); animation: fadeInUp 0.6s ease 0.9s forwards;">
+                <h3 style="font-size: 1.875rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1rem;">
+                    Need Help Choosing?
+                </h3>
+                <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; max-width: 32rem; margin-left: auto; margin-right: auto;">
+                    Our experts are here to help you find the perfect appliances for your lifestyle. 
+                    Get personalized recommendations and exclusive offers.
+                </p>
+                <div class="flex justify-center gap-4" style="flex-wrap: wrap;">
+                    <button class="btn btn-primary px-8 py-3">Talk to Expert</button>
+                    <button class="btn btn-outline px-8 py-3">Download Catalog</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Newsletter Section -->
+        <div class="newsletter-section">
+            <div class="newsletter-content">
+                <h3 class="newsletter-title">Stay in Style</h3>
+                <p class="newsletter-subtitle">Subscribe to our newsletter for exclusive offers, style tips, and the latest from ChicStyle</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="newsletter-input">
+                    <button class="btn btn-accent">
+                        <i data-lucide="mail"></i>
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Brand Section -->
+                    <div class="footer-brand">
+                        <h2>ComGen</h2>
+                        <p>Your premier destination for sophisticated fashion and premium appliances. Where style meets substance, and quality is never compromised.</p>
+                        
+                        <!-- Contact Info -->
+                        <ul class="contact-info">
+                            <li>
+                                <i data-lucide="phone" class="contact-icon"></i>
+                                <span>1-800-COM-GEN</span>
+                            </li>
+                            <li>
+                                <i data-lucide="mail" class="contact-icon"></i>
+                                <span>hello@ComGen.com</span>
+                            </li>
+                            <li>
+                                <i data-lucide="map-pin" class="contact-icon"></i>
+                                <span>123 Fashion Ave, Style City, SC 12345</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Shop Links -->
+                    <div class="footer-section">
+                        <h4>Shop</h4>
+                        <ul class="footer-links">
+                            <li><a href="#men">Men's Fashion</a></li>
+                            <li><a href="#women">Women's Fashion</a></li>
+                            <li><a href="#shoes">Footwear</a></li>
+                            <li><a href="#appliances">Appliances</a></li>
+                            <li><a href="#new">New Arrivals</a></li>
+                            <li><a href="#sale">Sale</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Customer Care -->
+                    <div class="footer-section">
+                        <h4>Customer Care</h4>
+                        <ul class="footer-links">
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#size-guide">Size Guide</a></li>
+                            <li><a href="#shipping">Shipping Info</a></li>
+                            <li><a href="#returns">Returns</a></li>
+                            <li><a href="#track">Track Order</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                            <li><a href="#press">Press</a></li>
+                            <li><a href="#sustainability">Sustainability</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Social Media & Trust Badges -->
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <span style="color: rgb(255, 255, 255); font-weight: 500; margin-right: 1rem;">Follow Us:</span>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i data-lucide="facebook"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i data-lucide="twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <i data-lucide="youtube"></i>
+                            </a>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="trust-badges">
+                            <span>🔒 Secure Checkout</span>
+                            <span>📦 Free Shipping</span>
+                            <span>↩️ Easy Returns</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-copyright">
+                    <p>&copy; 2024 ComGen. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <script src="javascript.js"></script>
+
+
+    
+</body>
+</html>
