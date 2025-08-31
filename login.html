@@ -5,8 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome Back</title>
     <link rel="stylesheet" href="login.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body>
+<nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; justify-content: center; height: 4rem;">
+                <img src="logo-png.png" alt="ComGen Logo" style="height: 3.5rem; width: 10.5rem; display: block; margin: 0 auto;">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
+                <li><a href="#shoes">Shoes</a></li>
+                <li><a href="#appliances">Appliances</a></li>
+            </ul>
+
+            <div class="search-container">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" placeholder="Search products..." class="search-input">
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="window.location.href='login.html'">
+                    <i data-lucide="user"></i>
+                    Login
+                </button>
+
+                <button class="btn btn-ghost" style="position: relative;">
+                    <i data-lucide="shopping-bag"></i>
+                    <span style="position: absolute; top: -0.25rem; right: -0.25rem; background: var(--accent); color: var(--foreground); font-size: 0.75rem; border-radius: 50%; width: 1rem; height: 1rem; display: flex; align-items: center; justify-content: center;">0</span>
+                </button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" placeholder="Search products..." class="search-input">
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="#men" onclick="toggleMobileMenu()">Men</a></li>
+                    <li><a href="#women" onclick="toggleMobileMenu()">Women</a></li>
+                    <li><a href="#shoes" onclick="toggleMobileMenu()">Shoes</a></li>
+                    <li><a href="#appliances" onclick="toggleMobileMenu()">Appliances</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn btn-ghost" onclick="window.location.href='login.html'">
+                        <i data-lucide="user"></i>
+                        Login
+                    </button>
+                    <button class="btn btn-primary">Sign Up</button>
+                    <button class="btn btn-ghost">
+                        <i data-lucide="shopping-bag"></i>
+                        Cart (0)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div class="container-wrapper">
         <div class="login-container" id="loginContainer">
             <div class="glass-overlay"></div>
@@ -122,6 +186,27 @@
         </div>
     </div>
 
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle function
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                mobileMenu.classList.add('active');
+                menuIcon.setAttribute('data-lucide', 'x');
+            }
+            
+            // Reinitialize icons after change
+            lucide.createIcons();
+        }
+    </script>
     <script src="login.js"></script>
 </body>
 </html>

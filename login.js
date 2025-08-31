@@ -1,4 +1,20 @@
-function validateEmail(email) {
+function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                mobileMenu.classList.add('active');
+                menuIcon.setAttribute('data-lucide', 'x');
+            }
+            
+            // Reinitialize icons after change
+            lucide.createIcons();
+        }
+
+        function validateEmail(email) {
             return email.includes('@') && email.trim() !== '';
         }
 
