@@ -147,9 +147,9 @@
         }
 
         .btn-outline {
-            background: var(--card);
-            color: var(--primary);
-            border: 1px solid var(--border);
+            background: var(--accent);
+            color: var(--primary-foreground);
+            border: 1px solid var(--accent);
         }
 
         .btn-outline:hover,
@@ -171,6 +171,7 @@
         }
 
         .btn-accent {
+            /* background: var(--accent); */
             background: var(--accent);
             color: var(--primary-foreground);
             border: none;
