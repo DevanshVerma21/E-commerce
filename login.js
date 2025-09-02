@@ -109,3 +109,5 @@ function toggleMobileMenu() {
             alert('Account created successfully! Please sign in.');
             showLogin();
         }
+
+       

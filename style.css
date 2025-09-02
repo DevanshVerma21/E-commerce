@@ -75,7 +75,7 @@
         }
 
         .nav-links a {
-            color: #f9f7e9;
+                color: #f9f7e9; /* strong dark brown */
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition-smooth);
@@ -240,6 +240,35 @@
             background: linear-gradient(135deg, var(--secondary) 80%, var(--background) 100%);
             padding: 2rem 0;
         }
+
+
+.hero-tagline h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--primary);
+
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--primary);
+
+  /* keep the word fixed, animate only width */
+  width: 0;
+  animation: typing 3s steps(20, end) infinite alternate,
+             blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 14ch; } /* Adjust '14ch' = number of characters in "Style Redefined" */
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--primary); }
+}
+
 
         .hero-container {
             max-width: 1280px;
