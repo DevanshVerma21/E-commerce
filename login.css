@@ -56,7 +56,7 @@
 }
 
 .nav-links a {
-    color: #f9f7e9;
+    color: #000;
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition-smooth);
@@ -167,7 +167,7 @@
 }
 
 .mobile-menu .nav-links a {
-    color: var(--primary);
+    color: #000;
 }
 
 .mobile-menu .nav-actions {
