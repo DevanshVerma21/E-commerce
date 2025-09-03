@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Collection - ComGen</title>
+    <meta name="description" content="Discover ComGen's premium women's fashion collection featuring elegant styles and contemporary designs">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="women.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; justify-content: center; height: 4rem;">
+                <img src="logo-png.png" alt="ComGen Logo" style="height: 3.5rem; width: 10.5rem; display: block; margin: 0 auto;">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="women.html" class="active">Women</a></li>
+                <li><a href="#shoes">Shoes</a></li>
+                <li><a href="#appliances">Appliances</a></li>
+            </ul>
+
+            <div class="search-container">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" placeholder="Search women's products..." class="search-input" id="search-input">
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn btn-ghost" onclick="window.location.href='login.html'">
+                    <i data-lucide="user"></i>
+                    Login
+                </button>
+
+                <button class="btn btn-ghost cart-btn" style="position: relative;" onclick="toggleCart()">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+
+            <div class="mobile-menu" id="mobile-menu">
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" placeholder="Search women's products..." class="search-input">
+                </div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
+                    <li><a href="men.html" onclick="toggleMobileMenu()">Men</a></li>
+                    <li><a href="women.html" onclick="toggleMobileMenu()">Women</a></li>
+                    <li><a href="#shoes" onclick="toggleMobileMenu()">Shoes</a></li>
+                    <li><a href="#appliances" onclick="toggleMobileMenu()">Appliances</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="btn btn-ghost" onclick="window.location.href='login.html'">
+                        <i data-lucide="user"></i>
+                        Login
+                    </button>
+                    <button class="btn btn-ghost">
+                        <i data-lucide="shopping-bag"></i>
+                        Cart (<span id="mobile-cart-count">0</span>)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filters & Search -->
+    <section class="filters-section">
+        <div class="section-container">
+            <div class="filters-header">
+                <h2>Filter & Search</h2>
+                <button class="filter-toggle-btn" onclick="toggleFilters()">
+                    <i data-lucide="sliders-horizontal"></i>
+                    Filters
+                </button>
+            </div>
+            
+            <div class="filters-container" id="filters-container">
+                <div class="filter-group">
+                    <label for="category-filter">Category</label>
+                    <select id="category-filter" onchange="filterProducts()">
+                        <option value="all">All Categories</option>
+                        <option value="dresses">Dresses</option>
+                        <option value="tops">Tops & Blouses</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="outerwear">Outerwear</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="formal">Formal Wear</option>
+                        <option value="casual">Casual Wear</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="price-filter">Price Range</label>
+                    <select id="price-filter" onchange="filterProducts()">
+                        <option value="all">All Prices</option>
+                        <option value="0-50">Under $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="200-500">$200 - $500</option>
+                        <option value="500+">$500+</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="brand-filter">Brand</label>
+                    <select id="brand-filter" onchange="filterProducts()">
+                        <option value="all">All Brands</option>
+                        <option value="comgen">ComGen</option>
+                        <option value="elegance">Elegance Collection</option>
+                        <option value="chic">Chic Line</option>
+                        <option value="contemporary">Contemporary Style</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sort-filter">Sort By</label>
+                    <select id="sort-filter" onchange="sortProducts()">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name A-Z</option>
+                        <option value="rating">Rating</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="btn btn-outline" onclick="clearFilters()">Clear All</button>
+                    <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="section-container">
+            <div class="products-header">
+                <div class="products-info">
+                    <h2>Elegant Women's Collection</h2>
+                    <p class="products-count" id="products-count">Showing 12 of 150+ products</p>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" onclick="setView('grid')" data-view="grid">
+                        <i data-lucide="grid-3x3"></i>
+                    </button>
+                    <button class="view-btn" onclick="setView('list')" data-view="list">
+                        <i data-lucide="list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically loaded by JavaScript -->
+            </div>
+
+            <div class="load-more-section">
+                <button class="btn btn-accent load-more-btn" onclick="loadMoreProducts()">
+                    <i data-lucide="plus"></i>
+                    Load More Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quick-view-modal">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeQuickView()">
+                <i data-lucide="x"></i>
+            </button>
+            
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modal-product-image" src="" alt="Product Image">
+                    <div class="modal-badges" id="modal-badges"></div>
+                </div>
+                
+                <div class="modal-details">
+                    <div class="modal-header">
+                        <h3 id="modal-product-name">Product Name</h3>
+                        <div class="modal-rating" id="modal-rating">
+                            <div class="stars"></div>
+                            <span class="rating-text"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-price" id="modal-price">
+                        <span class="current-price">$0</span>
+                        <span class="original-price">$0</span>
+                        <span class="discount-badge">0% OFF</span>
+                    </div>
+                    
+                    <div class="modal-description" id="modal-description">
+                        <p>Product description goes here...</p>
+                    </div>
+                    
+                    <div class="modal-options">
+                        <div class="size-selector">
+                            <label>Size:</label>
+                            <div class="size-options" id="size-options">
+                            </div>
+                        </div>
+                        
+                        <div class="color-selector">
+                            <label>Color:</label>
+                            <div class="color-options" id="color-options">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCartFromModal()">
+                            <i data-lucide="shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                        <button class="btn btn-outline wishlist-btn" onclick="toggleWishlistFromModal()">
+                            <i data-lucide="heart"></i>
+                            Wishlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" onclick="toggleCart()">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        
+        <div class="cart-content" id="cart-content">
+            <div class="empty-cart">
+                <i data-lucide="shopping-bag"></i>
+                <p>Your cart is empty</p>
+                <button class="btn btn-primary" onclick="toggleCart()">Continue Shopping</button>
+            </div>
+        </div>
+        
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-total">
+                <div class="total-line">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="total-line">
+                    <span>Shipping:</span>
+                    <span>Free</span>
+                </div>
+                <div class="total-line total-main">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-outline" onclick="toggleCart()">Continue Shopping</button>
+                <button class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with Women's Fashion</h2>
+                <p>Get exclusive access to new arrivals, style tips, and special offers</p>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-accent">
+                        <i data-lucide="mail"></i>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Newsletter Section -->
+        <div class="newsletter-section">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Stay in Style</h2>
+                <p class="newsletter-subtitle">Subscribe to get exclusive updates on women's fashion trends and offers</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-accent">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Brand Section -->
+                    <div class="footer-brand">
+                        <h2>ComGen</h2>
+                        <p>Your premier destination for sophisticated women's fashion. Where elegance meets contemporary style, and quality is never compromised.</p>
+                        
+                        <!-- Contact Info -->
+                        <ul class="contact-info">
+                            <li>
+                                <i data-lucide="phone" class="contact-icon"></i>
+                                <span>1-800-COM-GEN</span>
+                            </li>
+                            <li>
+                                <i data-lucide="mail" class="contact-icon"></i>
+                                <span>hello@ComGen.com</span>
+                            </li>
+                            <li>
+                                <i data-lucide="map-pin" class="contact-icon"></i>
+                                <span>123 Fashion Ave, Style City, SC 12345</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Shop Links -->
+                    <div class="footer-section">
+                        <h4>Women's Shop</h4>
+                        <ul class="footer-links">
+                            <li><a href="#dresses">Dresses</a></li>
+                            <li><a href="#tops">Tops & Blouses</a></li>
+                            <li><a href="#bottoms">Bottoms</a></li>
+                            <li><a href="#outerwear">Outerwear</a></li>
+                            <li><a href="#accessories">Accessories</a></li>
+                            <li><a href="#formal">Formal Collection</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Customer Care -->
+                    <div class="footer-section">
+                        <h4>Customer Care</h4>
+                        <ul class="footer-links">
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#size-guide">Size Guide</a></li>
+                            <li><a href="#shipping">Shipping Info</a></li>
+                            <li><a href="#returns">Returns & Exchanges</a></li>
+                            <li><a href="#track">Track Order</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="#about">About ComGen</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                            <li><a href="#sustainability">Sustainability</a></li>
+                            <li><a href="#press">Press & Media</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Social Media & Trust Badges -->
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <!-- Social Links -->
+                        <div class="social-links">
+                            <span style="color: rgb(255, 255, 255); font-weight: 500; margin-right: 1rem;">Follow Us:</span>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i data-lucide="facebook"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i data-lucide="instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i data-lucide="twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="YouTube">
+                                <i data-lucide="youtube"></i>
+                            </a>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="trust-badges">
+                            <span>🔒 Secure Checkout</span>
+                            <span>📦 Free Shipping</span>
+                            <span>↩️ Easy Returns</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="footer-copyright">
+                    <p>&copy; 2025 ComGen. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="javascript.js"></script>
+    <script src="women.js"></script>
+</body>
+</html>
