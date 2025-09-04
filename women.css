@@ -734,8 +734,8 @@
 
 /* Newsletter Section */
 .newsletter-section {
-    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
-    color: white;
+    /* background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); */
+    background-color: #74543e;
     padding: 4rem 0;
     margin-top: 4rem;
 }
@@ -795,7 +795,7 @@
 
 /* Women's specific styling accents */
 .women-accent {
-    color: #ec4899 !important;
+    color: #a98295 !important;
 }
 
 .women-gradient {

@@ -23,8 +23,10 @@
             </a>
 
             <ul class="nav-links">
-                <li><a href="men.html">Men</a></li>
-                <li><a href="women.html">Women</a></li>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#men">Men</a></li>
+                <li><a href="#women">Women</a></li>
                 <li><a href="#shoes">Shoes</a></li>
                 <li><a href="#appliances">Appliances</a></li>
             </ul>
@@ -56,7 +58,8 @@
                     <input type="text" placeholder="Search products..." class="search-input">
                 </div>
                 
-                <ul class="nav-links">
+                <ul class="nav-links">                                        
+                    <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
                     <li><a href="#men" onclick="toggleMobileMenu()">Men</a></li>
                     <li><a href="#women" onclick="toggleMobileMenu()">Women</a></li>
                     <li><a href="#shoes" onclick="toggleMobileMenu()">Shoes</a></li>
@@ -89,7 +92,7 @@
                     <div class="hero-content">
                         <h2>Men's Collection</h2>
                         <p>Discover sophisticated styles and timeless elegance</p>
-                        <button class="btn btn-accent">Shop Men's</button>
+                        <a href = "men.html" button class="btn btn-accent">Shop Men's</button></a>
                     </div>
                 </div>
 
@@ -100,7 +103,7 @@
                     <div class="hero-content">
                         <h2>Women's Collection</h2>
                         <p>Embrace luxury and contemporary fashion</p>
-                        <button class="btn btn-accent">Shop Women's</button>
+                        <a href="women.html" button class="btn btn-accent">Shop Women's</button></a>
                     </div>
                 </div>
             </div>
@@ -201,7 +204,9 @@
                 </div>
             </div>
                 <div class="text-center mt-3">
-                    <button class="btn btn-accent px-8 py-3 text-lg">View All Men's Fashion</button>
+                    <a href="men.html">
+                        <button class="btn btn-accent px-8 py-3 text-lg">View All Men's Fashion</button>
+                    </a>
                 </div>
         </div>
     </section>
@@ -294,7 +299,9 @@
                 </div>
             </div>
                 <div class="text-center mt-3">
+                    <a href="women.html">
                     <button class="btn btn-accent px-8 py-3 text-lg">View All Women's Fashion</button>
+                    </a>
                 </div>
         </div>
     </section>
