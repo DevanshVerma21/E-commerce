@@ -14,7 +14,7 @@ const womenProducts = [
         category: "dresses",
         price: 249.99,
         originalPrice: 329.99,
-        image: "D:/e-commerce/E-commerce/women images/Elegant Silk Evening Dress.jpg",
+        image: "women images/Elegant Silk Evening Dress.jpg",
         rating: 4.9,
         reviews: 156,
         description: "Luxurious silk evening dress with elegant draping and timeless sophistication. Perfect for special occasions and formal events.",
